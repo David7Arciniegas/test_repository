@@ -1,4 +1,6 @@
 -   Install Git: If you haven't already, download and install Git on your machine.
+
+-   Install .NET 7.0: If you haven't already, download and install the runtime. https://dotnet.microsoft.com/en-us/download/dotnet/7.0
     
 -   Clone the repository: Open a command prompt and navigate to the directory where you want to clone the repository. Then, use the `git clone` command to clone the repository, like so:
         
