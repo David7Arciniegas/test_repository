@@ -1,0 +1,45 @@
+@model TestApplication.Models.DoctorSearchViewModel  
+  
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <meta charset="utf-8" />  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    <title>Search</title>  
+</head>  
+<body>  
+    <h1>Doctor and Clinic Search</h1>  
+  
+    <form asp-action="Search" asp-controller="Search" method="post">  
+        <label for="DoctorOrClinicName">Doctor or Clinic Name:</label>  
+        <input id="DoctorOrClinicName" name="DoctorOrClinicName" value="@Model.DoctorOrClinicName" />  
+  
+        <label for="City">City:</label>  
+        <input id="City" name="City" value="@Model.City" />  
+  
+        <button type="submit">Search</button>  
+    </form>  
+  
+    @if (Model.Results != null)  
+    {  
+        <h2>Results</h2>  
+        <table>  
+            <thead>  
+                <tr>  
+                    <th>Name</th>  
+                    <th>City</th>  
+                </tr>  
+            </thead>  
+            <tbody>  
+                @foreach (var result in Model.Results)  
+                {  
+                    <tr>  
+                        <td>@result.Name</td>  
+                        <td>@result.City</td>  
+                    </tr>  
+                }  
+            </tbody>  
+        </table>  
+    }  
+</body>  
+</html>  
